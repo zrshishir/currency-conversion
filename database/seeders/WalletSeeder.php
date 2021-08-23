@@ -13,6 +13,15 @@ class WalletSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::insert([
+            [
+                'user_id' => 1,
+                'balance' => 5000,
+            ],
+            [
+                'user_id' => 2,
+                'balance' => 5000,
+            ],
+        ]);
     }
 }
