@@ -15,11 +15,10 @@ class CreateWalletsTable extends Migration
     {
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id');
             $table->float('balance');
+            $table->float('total_conversion');
             $table->timestamps();
-
-            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
