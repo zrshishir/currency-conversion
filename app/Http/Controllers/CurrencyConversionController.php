@@ -10,6 +10,8 @@ use App\Http\Balance\AvailableBalance;
 use App\Http\Balance\SentBalance;
 use App\Helper\ResponseHelper;
 use App\Helper\CurrencyRateHelper;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 
 
 class CurrencyConversionController extends Controller
@@ -36,7 +38,7 @@ class CurrencyConversionController extends Controller
         //checking receiver
         $receiver = $this->userObj->checkUser($data['receiver_id']);
         if(empty($receiver)){
-            return response()->json($this->helping->invalidInput("Invalid sender ID."));
+            return response()->json($this->helping->invalidInput("Invalid receiver ID."));
         }
 
         //checking balance availability
@@ -46,30 +48,44 @@ class CurrencyConversionController extends Controller
         }
 
         //taking currency conversion rate
-//        $currencyRates = $this->currencyRateObj->getCurrencyRate();
-//        if(empty($currencyRates)){
-//            return response()->json($this->helping->serverError('API connection Error. Please, check your api credentials.'));
-//        }
-//        if(empty($currencyRates->base) && $currencyRates->error){
-//            return response()->json($this->helping->invalidInput($currencyRates->description));
-//        }
+        $currencyRates = $this->currencyRateObj->getCurrencyRate();
+        if(empty($currencyRates)){
+            return response()->json($this->helping->serverError('API connection Error. Please, check your api credentials.'));
+        }
+        if(empty($currencyRates->base) && $currencyRates->error){
+            return response()->json($this->helping->invalidInput($currencyRates->description));
+        }
 
         //making a transaction and update wallet
-//        $rate = $currencyRates->rates->EUR;
-        $baseCurrency = 'USD';
-        $rate = .851725;
-        return response()->json($this->sentBalanceObj->sendingBalance($data['sender'], $receiver, $rate, $data['amount'], $baseCurrency));
+        $rate = $currencyRates->rates->EUR;
+        $baseCurrency = $currencyRates->base;
+//        $baseCurrency = 'USD';
+//        $rate = .851725;
+        $bug = $this->sentBalanceObj->sendingBalance($data['sender'], $receiver, $rate, $data['amount'], $baseCurrency);
         if($bug == 0){
-            //sending confirmation email to the receiver
-            $responseData = $this->helping->responseProcess(0, 200, "6 digit code has been sent to your email. Please submit the code to activate the account.", "");
+            $details = $this->mailData($data, $receiver, $rate, $baseCurrency);
+            //Confirmation email send to receiver email.
+            Mail::to($receiver->email)->send(new SendMail($details));
+            $responseData = $this->helping->responseProcess(0, 200, "Your have successfully converted and sent the currency.", "");
             return response()->json($responseData);
         } elseif($bug == 1062){
             $responseData = $this->helping->responseProcess(1, 1062, "Data is found duplicate.", "");
             return response()->json($responseData);
         }else{
-            $responseData = $this->helping->responseProcess(1, 1062, "something went wrong.", "");
+            $responseData = $this->helping->responseProcess(1, 1062, "Something went wrong.", "");
             return response()->json($responseData);
         }
 
+    }
+
+    private function mailData($data, $receiver, $rate, $baseCurrency): Array {
+        return [
+                'sender_name' => $data['sender']->name,
+                'sender_email' => $data['sender']->email,
+                'receiver_name'  => $receiver->name,
+                'receiver_email'  => $receiver->email,
+                'currency'  => $receiver->currency,
+                'amount' => ($receiver->currency == $baseCurrency) ? $data['amount'] * $rate : $data['amount'] / $rate,
+            ];
     }
 }
