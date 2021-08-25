@@ -14,6 +14,8 @@ class Transaction extends Model
     protected $fillable = [
         'from',
         'amount',
+        'rate',
+        'converted_amount',
         'credit_or_debit',
         'to',
     ];
