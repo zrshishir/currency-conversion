@@ -12,7 +12,7 @@ use Auth;
 
 class LoginController extends Controller
 {
-    private $helping = "";
+    private $helping;
 
     public function __construct(){
         $this->helping = new ResponseHelper();

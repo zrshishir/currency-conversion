@@ -12,12 +12,11 @@ class Transaction extends Model
     protected $table = "transactions";
 
     protected $fillable = [
-        'from',
+        'sender',
         'amount',
         'rate',
         'converted_amount',
-        'credit_or_debit',
-        'to',
+        'receiver',
     ];
 
     public function sender(){

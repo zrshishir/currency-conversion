@@ -21,10 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::group([], function(){
 
     Route::post('login', 'App\Http\Controllers\LoginController@login');
-
-//    Route::get('unauth', 'App\Http\Controllers\AuthController@unAuthMessage')->name('unauth');
-
     Route::group(['middleware'=>'auth:api'], function(){
-//        Route::get('logout', 'Auth\AuthController@logout');//logout
+        Route::post('convert', 'App\Http\Controllers\CurrencyConversionController@convertCurrency');//convert
+        Route::get('logout', 'App\Http\Controllers\LogoutController@logout');//logout
     });
+
+
 });

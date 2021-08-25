@@ -18,16 +18,16 @@ class ResponseHelper
         return $this->responseProcess(1, 422, $errorMsg, "");
     }
 
-    public function invalidEditId(): Array{
-        return $this->responseProcess(1, 403, "Invalid id.", "");
+    public function invalidInput($message): Array{
+        return $this->responseProcess(1, 403, $message, "");
     }
 
     public function savingData($datas): Array{
         return $this->responseProcess(0, 201, "Data has been saved.", $datas);
     }
 
-    public function serverError(): Array{
-        return $this->responseProcess(1, 500, "Internal Server Error.", "");
+    public function serverError($message): Array{
+        return $this->responseProcess(1, 500, $message, "");
     }
 
     public function notNumeric($datas): Array{
@@ -50,8 +50,11 @@ class ResponseHelper
         return $this->responseProcess(0, 200, "You are logged in...", $datas);
     }
 
+    public function logout(): Array{
+        return $this->responseProcess(0, 200, "Successfully logged out", "");
+    }
 
-    private function responseProcess($errorCode, $statusCode, $msg, $data): Array{
+    public function responseProcess($errorCode, $statusCode, $msg, $data): Array{
         $responseData['error'] = $errorCode;
         $responseData['statusCode'] = $statusCode;
         $responseData['message'] = $msg;
