@@ -18,14 +18,14 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'name'  =>  'User A',
-                'email' =>  'zrshishir@gmail.com',
+                'email' =>  'usera@gmail.com',
                 'email_verified_at' => Now(),
                 'password' => Hash::make('123456'),
                 'currency' => 'USD',
             ],
             [
                 'name'  =>  'User B',
-                'email' =>  'ziaur.rahman@devnetlimited.com',
+                'email' =>  'userb@gmail.com',
                 'email_verified_at' => Now(),
                 'password' => Hash::make('123456'),
                 'currency' => 'EUR',

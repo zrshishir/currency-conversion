@@ -25,7 +25,6 @@ class ReportRepository
     }
 
     public function thirdHighestRepository($receiver){
-
         $thirdHighest = Transaction::with('sender', 'receiver')
             ->where('receiver', $receiver)
             ->orderBy('converted_amount','DESC')
