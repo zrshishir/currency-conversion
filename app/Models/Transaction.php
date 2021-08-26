@@ -20,10 +20,10 @@ class Transaction extends Model
     ];
 
     public function sender(){
-        $this->belongsTo(User::class, 'from', 'id');
+        return $this->belongsTo(User::class, 'sender', 'id');
     }
 
     public function receiver(){
-        $this->belongsTo(User::class, 'to', 'id');
+        return $this->belongsTo(User::class, 'receiver', 'id');
     }
 }

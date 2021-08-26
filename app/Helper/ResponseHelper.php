@@ -10,8 +10,8 @@ class ResponseHelper
         return $this->responseProcess(0, 204, "No Content", "");
     }
 
-    public function indexData($datas): Array{
-        return $this->responseProcess(0, 200, "Datas...", $datas);
+    public function indexData($datas, $message): Array{
+        return $this->responseProcess(0, 200, $message, $datas);
     }
 
     public function validatingErrors($errorMsg): Array{
