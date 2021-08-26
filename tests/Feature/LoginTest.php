@@ -28,13 +28,13 @@ class LoginTest extends TestCase
     public function testSuccessfulLogin()
     {
         $user = User::factory()->create([
-            'email' => 'zrshishir1@gmail.com',
+            'email' => 'userc@gmail.com',
             'password' => bcrypt('123456'),
             'currency' => 'USD',
         ]);
 
 
-        $loginData = ['email' => 'zrshishir@gmail.com', 'password' => '123456'];
+        $loginData = ['email' => 'userc@gmail.com', 'password' => '123456'];
 
         $this->json('POST', 'api/login', $loginData, ['Accept' => 'application/json', 'Content-Type' => 'application/json'])
             ->assertJsonStructure([

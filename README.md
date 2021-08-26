@@ -1,3 +1,6 @@
+# P2P Wallet (Pay) System
+    A Simple app that convert currencies from USD to EUR and vice-versa.
+
 # Overview:
     The app goal is to build a simple P2P wallet (Pay) system.
 
@@ -29,12 +32,12 @@
         ❏ The total amount converted for a particular user.
         ❏ Show the third highest amount of transactions for a particular user
             (must use subquery).
-    ❖ You have to calculate and store data in the database to show stats properly.
-    ❖ We prefer to use a MySQL database for storing user’s data and stats.
+    ❖ Have to calculate and store data in the database to show stats properly.
+    ❖ Prefer to use a MySQL database for storing user’s data and stats.
     ❖ For interface design using any appropriate responsive design template.
-    ❖ In the backend, use an external API to get the currency rates.
-    ❖ Try to use any design pattern with the latest Laravel features.
-    ❖ Try to follow SOLID design principles for your coding.
+    ❖ In the backend, using an external API to get the currency rates (https://openexchangerates.org).
+    ❖ Trying to use any design pattern with the latest Laravel features.
+    ❖ Trying to follow SOLID design principles for your coding.
     ❖ Make sure to write a PHPUnit test for the application.
 
 ## Additional Requirement for currency exchange rate: 
@@ -57,6 +60,12 @@
 	4. https://openexchangerates.org api integration
     5. Currency Conversion
     6. Reports
+### Diagrams
+    * System diagram:
+![system diagram](/screenshots/system_architecture.png)
+
+    * Database diagram:
+![database diagram](/screenshots/database_diagram.png)
 
 ## Working Procedure
         - By default users are created when we run the command `php artisan db:seed`.
@@ -68,8 +77,8 @@
 	- Json file of postman api collection in the root directory named `currency convert.postman_collection.json`
 
 ## Project setup
-	Project setup details are described below step by step: The front end project for this project is . First, follow these steps then front end  steps
-		1. Download or clone the project from [curren conversion](git@github.com:zrshishir/currency-conversion.git).. 
+	Project setup details are described below step by step: The front end project for this project is https://github.com/zrshishir/currency-conversion-frontend. First, follow these steps then front end  steps
+		1. Download or clone the project from [currency conversion](git@github.com:zrshishir/currency-conversion.git).. 
 		2. Go to the project's root directory and run the command `composer install` or `composer update`.
 		3. After successfully composer updation set up your database credentials on .env file.
         4. Set your app_id for currency rates api from https://openexchangerates.org.
@@ -82,12 +91,12 @@
 		11. If you are using LEMP stack then follow proper steps [here](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04) and if you are using other then run the command `php artisan serve` to get the domain name or service url that will have to be assigned in the [frontend code](git@github.com:zrshishir/) `/src/api/product-frontend.js` ROOT_URL const.
 
 
-### screenshots of project setup procedure details
+### Screenshots of project setup procedure details
 	The working procedure is described below with screenshots:
 	1. To install this project you will have composer installed. You can install this project two ways
 		- Download the zip file from the repository and extract it on your pc
 
-		- clone the project using git and the command is `git clone git@github.com:zrshishir/product-frontend.git`. 
+		- clone the project using git and the command is `git clone git@github.com:zrshishir/currency-conversion.git`. 
 
 ![git clone](/screenshots/project_config/git_clone.png)
 
@@ -172,12 +181,24 @@
 
 ![Open Exchange Rate API Status](/screenshots/api_details/openexchangerate_api_activity.png)
 
-    12. Currency Conversion Report: Reports on most conversion and total amount converted for a particaular receiver
+    12. Transaction: Transaction api with data
+
+![Transaction api with data](/screenshots/api_details/transaction_with_data.png)
+
+    13. Transaction: Transaction api without data
+
+![Transaction api without data](/screenshots/api_details/transaction_without_data.png)
+
+    14. Currency Conversion Report: Reports on most conversion and total amount converted for a particaular receiver
 
 ![Reports 1](/screenshots/api_details/report_data_1.png)
 
 ![Reports 2](/screenshots/api_details/report_data_2.png)
 
-12. Currency Conversion Report: Reports on third highest amount of transactions for a particular user
+    15. Currency Conversion Report: Reports on third highest amount of transactions for a particular user
 
 ![Reports 3](/screenshots/api_details/report_data_3.png)
+
+    16. Running test script
+
+![Running test script](/screenshots/running_test_command.png)
