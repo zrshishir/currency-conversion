@@ -1,65 +1,156 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Overview:
+    The app goal is to build a simple P2P wallet (Pay) system.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Scenario:
+    There are two registered users with a single currency based wallet. User
+    A has a USD and user B has a EUR wallet. User A can send any amount of money
+    to user B in USD currency. This USD amount will be converted to EUR and
+    transferred to user B wallet. In the meantime, a confirmation email will be sent to
+    user B.
 
-## About Laravel
+    You will find detailed requirements below. To be successful you don’t have to follow
+    them strictly. Invest reasonable time depending on your free time and don’t worry if
+    you can’t finish it all. Focus on the quality of your code, not on the number of
+    tasks. Make it readable, expandable and production-ready. Make sure you deal
+    with possible errors etc. Please read the requirements and additional
+    requirements carefully.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    Feel free to ask any questions. Write down any significant problems you
+    encountered. Let us know how you solved them or how you would tackle them if you
+    had more time.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requirements:
+    ❖ Use Laravel / Lumen RESTful
+        API to develop this currency conversion application.
+    ❖ Using Passport authentication feature to make API secure.
+    ❖ Each user will have only one single currency based wallet.
+    ❖ The system should also display the following stats:
+        ❏ User who used most conversion.
+        ❏ The total amount converted for a particular user.
+        ❏ Show the third highest amount of transactions for a particular user
+            (must use subquery).
+    ❖ You have to calculate and store data in the database to show stats properly.
+    ❖ We prefer to use a MySQL database for storing user’s data and stats.
+    ❖ For interface design using any appropriate responsive design template.
+    ❖ In the backend, use an external API to get the currency rates.
+    ❖ Try to use any design pattern with the latest Laravel features.
+    ❖ Try to follow SOLID design principles for your coding.
+    ❖ Make sure to write a PHPUnit test for the application.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Additional Requirement for currency exchange rate: 
+    ❖ Currency rates APIs:
+        ❏ https://openexchangerates.org
 
-## Learning Laravel
+## Tech Specifications
+	- "php": "^7.4|^8.0".
+    - "laravel/framework": "^8.56".
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Features
+	1. Passport Generated Token
+		- token validation checking and responses through middleware
+	2. Database migration
+	3. Authentication
+		- all possible responses
+		- Validation for login
+		- all possible responses for invalid login and signup
+	4. https://openexchangerates.org api integration
+    5. Currency Conversion
+    6. Reports
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Working Procedure
+        - By default admin is created when we run the command `php artisan db:seed` and the admin email is `admin@gmail.com`
+        - Admin will log into the system with the admin email and password is `123456`.
+        - Admin will send an invitation to user with his user email. 
+        - User will submit his/her user name and password. A 6 digit code will be generated and sent to the user email. User need to submit the code to complete the registration.
+        - Now User can login with email and password and update his/her profile.
 
-### Premium Partners
+## Attachment
+	- Json file of postman api collection in the root directory named `laravel authentication.postman_collection.json
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+## Project setup
+	Project setup details are described below step by step: The front end project for this project is [here](https://github.com/zrshishir/product-frontend). First, follow these steps then front end [project](git@github.com:zrshishir/product-frontend) steps
+		1. Download or clone the project from [auth](git@github.com:zrshishir/auth.git). 
+		2. Go to the project's root directory and run the command `composer install` or `composer update`
+		3. After successfully composer updation set up your database credentials on .env file
+		4. Run the command `php artisan migrate`
+		5. Run the command `php artisan passport:install`
+		6. Run the command `php artisan passport:key`
+		7. Run the command `php artisan db:seed`
+		8. Run the command `php artisan storage:link`
+		9. If you need to rollback the database, just run the command `php artisan migrate:rollback`
+		10. If you are using LEMP stack then follow proper steps [here](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04) and if you are using other then run the command `php artisan serve` to get the domain name or service url that will have to be assigned in the [frontend code](git@github.com:zrshishir/product-frontend) `/src/api/product-frontend.js` ROOT_URL const.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### screenshots of project setup procedure details
+	The working procedure is described below with screenshots:
+	1. To install this project you will have composer installed. You can install this project two ways
+		- Download the zip file from the repository and extract it on your pc
 
-## Code of Conduct
+		- clone the project using git and the command is `git clone git@github.com:zrshishir/product-frontend.git`. 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![git clone](/screenshots/project_config/git_clone.png)
 
-## Security Vulnerabilities
+	2. Go to the project's root directory 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![go to root directory](/screenshots/project_config/go_to_project.png)
 
-## License
+	3. run the command `composer update` or `composer install`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# currency-conversion
+![composer upate](/screenshots/project_config/composer_update.png)
+
+	4. Database credential set up
+
+![db set up](/screenshots/project_config/database_config.png)
+
+	5. smtp mail server setup
+
+![smtp configuration](/screenshots/project_config/smtp_config.png)
+
+    6. Run the command `php artisan migrate`
+
+![migration](/screenshots/project_config/migrate.png)
+
+    7. Run the command `php artisan passport:install`
+
+![passport installation](/screenshots/project_config/passport_install.png)
+
+    8. Run the command `php artisan passport:key`
+
+![passport key](/screenshots/project_config/passport_key.png)
+
+    9. Run the command to seed database `php artisan db:seed`
+
+![database seeding](/screenshots/project_config/db_seed.png)
+
+	10. Run the command `php artisan storage:link`
+
+[comment]: <> (![storage link]&#40;/screenshots/terminal_5.png&#41;)
+
+	7. Run the command `php artisan serve` and use this link on the postman url
+
+[comment]: <> (![To run the project]&#40;/screenshots/terminal_6.png&#41;)
+
+### Some screenshots of the project postman api: As I use LEMP stack for my local server environment, I have used domain name in the url
+#### you can use localhost or ip. I have attached postman json file for the project. You can use it also.
+	1. Email invitation for Signup
+
+![Email Invitation for Signup](/screenshots/api_details/mail_invitation.png)
+
+	2. User registration with user name and password
+
+![User Registration](/screenshots/api_details/user_register.png)
+
+	3. Code verification 
+
+![code verification](/screenshots/api_details/code_verification.png)
+
+	4. Admin/User login
+
+![Login](/screenshots/api_details/login.png)
+
+	5. Profile update
+
+![Profile Updating](/screenshots/api_details/profile_update.png)
+
