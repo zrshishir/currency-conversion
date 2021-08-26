@@ -12,6 +12,7 @@ use App\Helper\ResponseHelper;
 use App\Helper\CurrencyRateHelper;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
+use App\Http\Transaction\DataTransaction;
 
 
 class CurrencyConversionController extends Controller
@@ -21,6 +22,7 @@ class CurrencyConversionController extends Controller
     private $balanceObj;
     private $sentBalanceObj;
     private $currencyRateObj;
+    private $dataTransactionObj;
 
     public function __construct(){
         $this->userObj = new IdentificationUser();
@@ -28,6 +30,7 @@ class CurrencyConversionController extends Controller
         $this->currencyRateObj = new CurrencyRateHelper();
         $this->sentBalanceObj = new SentBalance();
         $this->helping = new ResponseHelper();
+        $this->dataTransactionObj = new DataTransaction();
     }
 
     public function convertCurrency(Request $request):JsonResponse{
@@ -38,22 +41,22 @@ class CurrencyConversionController extends Controller
         //checking receiver
         $receiver = $this->userObj->checkUser($data['receiver_id']);
         if(empty($receiver)){
-            return response()->json($this->helping->invalidInput("Invalid receiver ID."));
+            return response()->json($this->helping->responseProcess(1, 403, "Invalid receiver ID.", $this->dataTransactionObj->dataTransaction($data['sender']->id)));
         }
 
         //checking balance availability
         $checkBalance = $this->balanceObj->checkBalance($data['sender']->id, $data['amount']);
         if(! $checkBalance){
-            return response()->json($this->helping->invalidInput("You have no enough balance to transfer. Please, credit your balance."));
+            return response()->json($this->helping->responseProcess(1, 403, "You have no enough balance to transfer. Please, credit your balance.", $this->dataTransactionObj->dataTransaction($data['sender']->id)));
         }
 
         //taking currency conversion rate
         $currencyRates = $this->currencyRateObj->getCurrencyRate();
         if(empty($currencyRates)){
-            return response()->json($this->helping->serverError('API connection Error. Please, check your api credentials.'));
+            return response()->json($this->helping->responseProcess(1, 500, "API connection Error. Please, check your api credentials.", $this->dataTransactionObj->dataTransaction($data['sender']->id)));
         }
         if(empty($currencyRates->base) && $currencyRates->error){
-            return response()->json($this->helping->invalidInput($currencyRates->description));
+            return response()->json($this->helping->responseProcess(1, 403, $currencyRates->description, $this->dataTransactionObj->dataTransaction($data['sender']->id)));
         }
 
         //making a transaction and update wallet
@@ -66,13 +69,13 @@ class CurrencyConversionController extends Controller
             $details = $this->mailData($data, $receiver, $rate, $baseCurrency);
             //Confirmation email send to receiver email.
             Mail::to($receiver->email)->send(new SendMail($details));
-            $responseData = $this->helping->responseProcess(0, 200, "Your have successfully converted and sent the currency.", "");
+            $responseData = $this->helping->responseProcess(0, 200, "Your have successfully converted and sent the currency.", $this->dataTransactionObj->dataTransaction($data['sender']->id));
             return response()->json($responseData);
         } elseif($bug == 1062){
-            $responseData = $this->helping->responseProcess(1, 1062, "Data is found duplicate.", "");
+            $responseData = $this->helping->responseProcess(1, 1062, "Data is found duplicate.", $this->dataTransactionObj->dataTransaction($data['sender']->id));
             return response()->json($responseData);
         }else{
-            $responseData = $this->helping->responseProcess(1, 1062, "Something went wrong.", "");
+            $responseData = $this->helping->responseProcess(1, 1062, "Something went wrong.", $this->dataTransactionObj->dataTransaction($data['sender']->id));
             return response()->json($responseData);
         }
 

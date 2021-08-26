@@ -12,7 +12,7 @@
 					"name": "login",
 					"item": [
 						{
-							"name": "login for cc",
+							"name": "login successfull",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -32,7 +32,7 @@
 									"formdata": [
 										{
 											"key": "email",
-											"value": "ziaur.rahman@devnetlimited.com",
+											"value": "usera@gmail.com",
 											"type": "text"
 										},
 										{
@@ -57,7 +57,7 @@
 							},
 							"response": [
 								{
-									"name": "required field validation",
+									"name": "login field validation response",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -77,7 +77,7 @@
 											"formdata": [
 												{
 													"key": "email",
-													"value": "zrshishir@gmail.com",
+													"value": "usera@gmail.com",
 													"type": "text",
 													"disabled": true
 												},
@@ -128,7 +128,95 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 24 Aug 2021 13:41:47 GMT"
+											"value": "Thu, 26 Aug 2021 04:38:42 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": 1,\n    \"statusCode\": 422,\n    \"message\": \"The email field is required.The password field is required.\",\n    \"data\": \"\"\n}"
+								},
+								{
+									"name": "login email validation response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "usera@gmail.",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123456",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "local.cconversion.com/api/login",
+											"host": [
+												"local",
+												"cconversion",
+												"com"
+											],
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.18.0 (Ubuntu)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 26 Aug 2021 04:40:25 GMT"
 										},
 										{
 											"key": "X-RateLimit-Limit",
@@ -144,98 +232,10 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"error\": 1,\n    \"statusCode\": 422,\n    \"message\": \"The email field is required.The password field is required.\",\n    \"data\": \"\"\n}"
-								},
-								{
-									"name": "email validation response",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "email",
-													"value": "zrshishir@gmail.",
-													"type": "text"
-												},
-												{
-													"key": "password",
-													"value": "123456",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "local.cconversion.com/api/login",
-											"host": [
-												"local",
-												"cconversion",
-												"com"
-											],
-											"path": [
-												"api",
-												"login"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.18.0 (Ubuntu)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 24 Aug 2021 13:43:50 GMT"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
 									"body": "{\n    \"error\": 1,\n    \"statusCode\": 422,\n    \"message\": \"The email must be a valid email address.\",\n    \"data\": \"\"\n}"
 								},
 								{
-									"name": "user not existing response",
+									"name": "login user not exist response",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -255,7 +255,7 @@
 											"formdata": [
 												{
 													"key": "email",
-													"value": "zrshishir1@gmail.com",
+													"value": "usera@gmail.com",
 													"type": "text"
 												},
 												{
@@ -304,7 +304,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 24 Aug 2021 13:44:29 GMT"
+											"value": "Thu, 26 Aug 2021 04:41:47 GMT"
 										},
 										{
 											"key": "X-RateLimit-Limit",
@@ -312,7 +312,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "57"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -323,7 +323,7 @@
 									"body": "{\n    \"error\": 1,\n    \"statusCode\": 401,\n    \"message\": \"User does not exist. Please Sign Up.\",\n    \"data\": \"\"\n}"
 								},
 								{
-									"name": "successfull login",
+									"name": "login successfull",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -343,7 +343,7 @@
 											"formdata": [
 												{
 													"key": "email",
-													"value": "zrshishir@gmail.com",
+													"value": "usera@gmail.com",
 													"type": "text"
 												},
 												{
@@ -392,7 +392,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 24 Aug 2021 13:37:47 GMT"
+											"value": "Thu, 26 Aug 2021 04:43:19 GMT"
 										},
 										{
 											"key": "X-RateLimit-Limit",
@@ -400,7 +400,7 @@
 										},
 										{
 											"key": "X-RateLimit-Remaining",
-											"value": "58"
+											"value": "59"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -408,7 +408,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"You are logged in...\",\n    \"data\": {\n        \"users\": {\n            \"id\": 1,\n            \"name\": \"User A\",\n            \"email\": \"zrshishir@gmail.com\",\n            \"email_verified_at\": \"2021-08-23T15:04:19.000000Z\",\n            \"currency\": \"USD\",\n            \"created_at\": null,\n            \"updated_at\": null,\n            \"api_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjBjYWM4NTFjNjUyZjViYmY3NmZjYmI0MTZhZDg0NDM3Y2U0ZGRkY2ExN2IxMjNkMDBlMzc4M2NjYjkxYmM1OTU0NjQyYzE0YjhiOTExMjYiLCJpYXQiOjE2Mjk4MTIyNjcuMjg1NTUzLCJuYmYiOjE2Mjk4MTIyNjcuMjg1NTU4LCJleHAiOjE2NjEzNDgyNjcuMjcyNjQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.FdpfUmCA1Q6pl5t0Ifj-yZXX8fTRVyrz4dV6trTDMW-6bGmtYuX4Mp9qK9NM2oKTtAAYSLfOuDbRDwnEwJj6zLqNmYOVpnwRRnk4YXWsrfWiqGJvS3db-JF-SwHmTfPBwltaI4V4vgJTxQ7h97jOIFypnZnMZcFLm0Cc4nzzZ04_ShMtA_XrOHT0Or65xecN-7C2WTq00M9cmg8zgyCMWnjWIvxzZ-44wl1xHlx01vos5HaI8MKgcaZxMPq9wSyqiR_pR6sRzux_Glk2NUiSTgRscnB7CdWZqXelE7Xew9Gblz2BRcMIi18jX4DW_5z4J3e-MoMSqHctDxgzSd1dLzWU_4t65gHzm_RTV3v6_fZ5wth2jcDN7xyjsYdCgbEm02qseDIL_p1Kq2LfF1Esu0JJmfMvSKkw0Zk_F-556HCQ-vjaZXj8exqrlOGW4-e5Dzo3tJWeWT85FTH4WVEQvX0ER7RLgiGXLs8hP2zC6kN--O2mMCKItUuedJhPd2qOYxgG8XVkbz_gFsVjyXIj_asnD9LlbZZRrZYkX7xl9MYFWkTn27aSWtDBWGIP5Du2vcjxachLYidjKKq1jTzNQ4WIgAEZe74o5_Qc7i8I3K7wulQlkcj1da2QNJ6oUPF-ct_oP6knNS_Mn5U50BmFNm0NlnqSzkdIfTO9KGdJj94\",\n            \"token_type\": \"Bearer\"\n        }\n    }\n}"
+									"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"You are logged in...\",\n    \"data\": {\n        \"users\": {\n            \"id\": 1,\n            \"name\": \"User A\",\n            \"email\": \"usera@gmail.com\",\n            \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n            \"currency\": \"USD\",\n            \"created_at\": null,\n            \"updated_at\": null,\n            \"api_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGQ2OWZiODhlYmQwMWI2ZDU2OTM1ZmY5Y2NjMWIxZjY1MmM0MjE0ZGUyYzUyMGEyOTA4MDhlMGYxMzk0OTg1ZjZiZGY4MjYwNWEzNzgxNzkiLCJpYXQiOjE2Mjk5NTI5OTguOTg3Nzk3LCJuYmYiOjE2Mjk5NTI5OTguOTg3ODAyLCJleHAiOjE2NjE0ODg5OTguOTgyNzc5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.JrfB575AjSDjaMIc7ZCp7XrfFmxL-kayYWip93R4k1_iFBowWbK-SXfVw12GVnszKH7uXqZ24IsBZRD0vSRsN1795IBvQXESxBruoEVh8g7IhXilbtnaFzpgvm3vxa-KqRw6k_oEShrdahhWrOGLFsD5OGCF2sbi8VTiHg_sQalCkQN7aCvWDpTHO3p-Xy9aYmdoZgK4XDPcM0_ziZmZvgnMhhFQohdycozrLErkF0o_S1EAp3LAMjflRuB1VD_35UR6CLKhXqeMQ1McEKMHrQoWti2PLxYlGg7aqDE8PsTQVkmMyszbcgTZPAg6F_X1d7kieOuDu6rRbXpPBXWbU0SsL2Q_V1rJGm5sYRZmpUWxqaIvMGtFAwdCZFGU6vZlLpCGFDQ_a0ohjZ04Q05sNQd1t2xq2zItTV2AZALls-hCqM1xGJVYUsGNIm3VfOZuQNB9qfI8jD1AUh_YkT1pE_TPXVsDibIdvhQEa9wShs4s-VqHsTb3G14uq3m5dM_qUwYx9dkVIV0vI4KA_R5MxQZWROO5KbvVMq6W3DvrF11ma4bIcHDYQlOgUZdPAE1zQKehxMU37p1rlcaxDo4LnI1253-cHQa20CCXCIOrRwl3xYuww23k3PiOE-xEUk_kYGO2ZdNeK9ARv-iZFkjvE05QzKenICnbJckOTKAQbl4\",\n            \"token_type\": \"Bearer\"\n        }\n    }\n}"
 								}
 							]
 						}
@@ -475,7 +475,6 @@
 											{
 												"key": "token",
 												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmQ5YmMyMjQwNDc5MWVhMzY3NjhhNTVkOGNlMjJmYTVjZjczOWZmNTVjYWVkNTNjMzM3OTllMTI3OWU2MWYwOGMzNmNkZmQyZTQ0NTllM2UiLCJpYXQiOjE2Mjk4Njk5NDEuOTA3MzcyLCJuYmYiOjE2Mjk4Njk5NDEuOTA3Mzc3LCJleHAiOjE2NjE0MDU5NDEuOTAyMTE4LCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.Fy3jFHeejBIgdFW9l_b9hb6Duzzp2eMBLklPAJZULyylB9BxJxMq69Snr2sgA_qPj6xyV-DTfBI4QVDABuZ5yFGRFipaX9hglVnndl2KG7TBqe30wi18kX9dKjNHQvm5cVPoeib-sk7RTiz0zLNYnN2X_ORSKk7yAj4e_lpTeYQKJTPs8mOoACRrS5xa6U4tDeA1qk3GySxMyurw3zBCvDO6OoG-TQVLsUmvAi4n2ROU3JUSp5avMSAiFw5KektslAoMaQev8ZOz42EUq39Fio5xD_6CWyT6WV50LWF7v0Pj2NHsF3nm8fWgHz5YeBbVJygKvcynKRYC2bGYrkhVB4zTiPO6AIteXW-kUJZY7WysYFgBzjlVm0qT-9WfscD076wDdmG8XR-3-_g9q2693MujrJdL0eUL6r_bE5VIuADvBlxcI60oWxJFXfX05ZTJ2MNfpY-oltkvYRaehogMtT0eFtZwDb08ZCdr9RIUNkIeP5Aisytmr3Rbi0QDm42J99L-ViWl0Rq28DRinkXlr3RKzg1QZu79I9VZL_WcQ7WqRv1etLfFxmpY6ony3xnHV6A3e9BRD8TrrY_AYDPKcF8YD7Lu29LyYrIVSKPwjUkqF-TnM0hDgM7xl4Ky3mH7dC0wSKLClRQvgsfc8IBFnvCfrGkQ856zRpo33N-h1xg",
-												"type": "text",
 												"disabled": true
 											}
 										],
@@ -539,23 +538,70 @@
 							]
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"name": "currency conversion",
+			"item": [
 				{
-					"name": "currency conversion",
-					"item": [
-						{
-							"name": "currency convert",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNmZiNDYyZDg0MGE5YTE5MTkzY2ViODFkNjhhOGVkNzc2ZjM5OTVhMWQ4ZTAzODNhMWJhYTMwMmU1NWQ2YTQ0NzUyZmQ0MTJiODUxNmUxNmIiLCJpYXQiOjE2Mjk5MTIzOTEuOTI5ODg5LCJuYmYiOjE2Mjk5MTIzOTEuOTI5ODk1LCJleHAiOjE2NjE0NDgzOTEuOTE3NTk5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.PjPjLYprHOsZ26h7YYJK8ViXVEA__a_YcmgErgOYqmyPMaMTrA62_xu69SqQaR3Td-wUQ9TdK5K7xPMnAYg04RLFH6XaAr4__i5jaIBjs9s2-Tc--7k7MZJjSisSv9KvT7Tm-Dk_XLQuxR0zCdB5gSOxW4mv3HAZsXYkTQ7_3grgYGpmQkGx5TcM96JRK0kW66taXE_PvWvnyeu0-4m0xiOtPcnwfxadkIfWgxATvhRkjOV8bZ801EDy8EQONlCvdeJLOa1MrGgiq6AiXM7slgOOk4qjTrLtimkHuxLpYD4I2FI6zo-TygTzBWKWdgvRRaJLuBnNDf5acDUQRp1psysVhOX81qtfsCgJi3Qp-4CSbrfHsVdo2dbCw5iXPbFHuaj_zf5pwdZUnPzxSy5l65Z3Igq1X4Y9kngyNB-IzFmVmV7600UbIi65NuqQ6F4smBT9M0Ne-isDA69IUIX8RV0zxkhENAEp_Mn1BMxy6J3kL6K0nDl1thwwZ5Jci1-d5f4Gu6HvHD7Kcdpavuo7cVRwa8ZaU5puavYWnVZnYd7L4xEGbOSJSYnUUWbVXmalMSqzZqAGKG9_wvn3QIpblK5K0ULwfOKg-3BrpC7Ah2yS5lyjoGdTnYWcft_b2qupteoC-bfrd7adkw7ypug4TlKEMOq34-4-M8ANHE06T1c",
-											"type": "string"
-										}
-									]
+					"name": "currency convert",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWE4ZjYxN2E5M2MxMDNlZTg4NDVmZjMzMzdmNjc2NWRiMDk1MGZkNjQ5MzA5YzdiOGY5YzZhNWQwNGExNTNhN2FlZWQ4Y2QwNjUxMjQ5ZjQiLCJpYXQiOjE2MzAwMDk4ODUuNTEwNjIzLCJuYmYiOjE2MzAwMDk4ODUuNTEwNjI5LCJleHAiOjE2NjE1NDU4ODUuNTA2OTU4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.v3rllX_jQT42e1FsxLB4KovlnSf02DUpf84AXphPDLwzdN0HhfBaRwcn4FCGoENrZnQcth250FqgpTfHPNmarnAapnzalIu6OdC6dW2O2CgYEy7BxXmj_F4W2CYR75uMV6y-d-UTgxCSO-kU0YVOWhfmzrhg-4yvydTY-C-3wdqYJGix6v23FVsIQHRBZrdEZ9quX0-BdMOrJxYI9BsGpY-OOp74Ja0pwqNAlx83IX8hkcjvVFnBT3omrCkledgUBHJGexC0ytP2-pMfU2s_DCGSNLWHPq99qqhdbnHnZSPMa0B7pxX81xg6OoLqQxe87hLZOHrfIxF7d8_QNODWGASyVVaWqF0klf6HqABaHyDxomzcTaqmglqzdMbE_716OCUlyqFiq0H-XeQ7yRRP5awr_TyCsGwVInauF86BclUM0myt5X30wcHeF6wkvrBGN6FwPfhNVM-qNEAnyjDJQski1f6LiNpCBwLyOIlfJ3pSk8CZieQs-V9oWsU8d4q4Pic0Evz5f7W3sNchQ6RXfi_v2UYKr4bPKhbKELv7I-D7CgRAw9aFxIsJl8gDgoVah-oQ43EWiwTUfzbiWGkjtUL1z4vc6VC_4HAiVzNEgPuFZ4WAkx7QyPEiJYrb0BGpONOBgR97DsgWgGIf1VQxuUSHpaoPzlMgscrFPGGzhgs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "receiver_id",
+									"value": "2",
+									"type": "text"
 								},
+								{
+									"key": "amount",
+									"value": "27",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.cconversion.com/api/convert",
+							"host": [
+								"local",
+								"cconversion",
+								"com"
+							],
+							"path": [
+								"api",
+								"convert"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "currency conversion successful",
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
@@ -579,7 +625,7 @@
 										},
 										{
 											"key": "amount",
-											"value": "9",
+											"value": "10",
 											"type": "text"
 										}
 									]
@@ -597,369 +643,706 @@
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "Response for invalid receiver ID",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "receiver_id",
-													"value": "8",
-													"type": "text"
-												},
-												{
-													"key": "amount",
-													"value": "10",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "local.cconversion.com/api/convert",
-											"host": [
-												"local",
-												"cconversion",
-												"com"
-											],
-											"path": [
-												"api",
-												"convert"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.18.0 (Ubuntu)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 25 Aug 2021 17:41:11 GMT"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"error\": 1,\n    \"statusCode\": 403,\n    \"message\": \"Invalid receiver ID.\",\n    \"data\": \"\"\n}"
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
 								},
 								{
-									"name": "Response for checking balance availability",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "receiver_id",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "amount",
-													"value": "10000",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "local.cconversion.com/api/convert",
-											"host": [
-												"local",
-												"cconversion",
-												"com"
-											],
-											"path": [
-												"api",
-												"convert"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.18.0 (Ubuntu)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 25 Aug 2021 17:42:00 GMT"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "58"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"error\": 1,\n    \"statusCode\": 403,\n    \"message\": \"You have no enough balance to transfer. Please, credit your balance.\",\n    \"data\": \"\"\n}"
+									"key": "Content-Type",
+									"value": "application/json"
 								},
 								{
-									"name": "Response for invalid app id for open exchange rate api call",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "receiver_id",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "amount",
-													"value": "9",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "local.cconversion.com/api/convert",
-											"host": [
-												"local",
-												"cconversion",
-												"com"
-											],
-											"path": [
-												"api",
-												"convert"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.18.0 (Ubuntu)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 25 Aug 2021 17:43:46 GMT"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"error\": 1,\n    \"statusCode\": 403,\n    \"message\": \"Invalid App ID provided. Please sign up at https://openexchangerates.org/signup, or contact support@openexchangerates.org.\",\n    \"data\": \"\"\n}"
+									"key": "Transfer-Encoding",
+									"value": "chunked"
 								},
 								{
-									"name": "currency conversion successful",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "receiver_id",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "amount",
-													"value": "10",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "local.cconversion.com/api/convert",
-											"host": [
-												"local",
-												"cconversion",
-												"com"
-											],
-											"path": [
-												"api",
-												"convert"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.18.0 (Ubuntu)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 25 Aug 2021 17:37:44 GMT"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Your have successfully converted and sent the currency.\",\n    \"data\": \"\"\n}"
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Aug 2021 17:37:44 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
 								}
-							]
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Your have successfully converted and sent the currency.\",\n    \"data\": \"\"\n}"
+						},
+						{
+							"name": "Response for invalid receiver without transactions data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "receiver_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "25",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.cconversion.com/api/convert",
+									"host": [
+										"local",
+										"cconversion",
+										"com"
+									],
+									"path": [
+										"api",
+										"convert"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 20:21:58 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 403,\n    \"message\": \"Invalid receiver ID.\",\n    \"data\": {\n        \"transactions\": [],\n        \"users\": [\n            {\n                \"id\": 1,\n                \"name\": \"User A\",\n                \"email\": \"usera@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"USD\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Response for checking balance availability without transactions data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "receiver_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "250000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.cconversion.com/api/convert",
+									"host": [
+										"local",
+										"cconversion",
+										"com"
+									],
+									"path": [
+										"api",
+										"convert"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 20:24:34 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 403,\n    \"message\": \"You have no enough balance to transfer. Please, credit your balance.\",\n    \"data\": {\n        \"transactions\": [],\n        \"users\": [\n            {\n                \"id\": 1,\n                \"name\": \"User A\",\n                \"email\": \"usera@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"USD\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Response for open exchange rate invalid app id without transactions data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "receiver_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "25",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.cconversion.com/api/convert",
+									"host": [
+										"local",
+										"cconversion",
+										"com"
+									],
+									"path": [
+										"api",
+										"convert"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 20:26:07 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 403,\n    \"message\": \"Invalid App ID provided. Please sign up at https://openexchangerates.org/signup, or contact support@openexchangerates.org.\",\n    \"data\": {\n        \"transactions\": [],\n        \"users\": [\n            {\n                \"id\": 1,\n                \"name\": \"User A\",\n                \"email\": \"usera@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"USD\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Response for currency conversion successfull",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "receiver_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "25",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.cconversion.com/api/convert",
+									"host": [
+										"local",
+										"cconversion",
+										"com"
+									],
+									"path": [
+										"api",
+										"convert"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 20:28:06 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Your have successfully converted and sent the currency.\",\n    \"data\": {\n        \"transactions\": [\n            {\n                \"id\": 6,\n                \"sender\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 25,\n                \"rate\": 0.85,\n                \"converted_amount\": 29.39,\n                \"receiver\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T20:27:58.000000Z\",\n                \"updated_at\": \"2021-08-26T20:27:58.000000Z\"\n            }\n        ],\n        \"users\": [\n            {\n                \"id\": 1,\n                \"name\": \"User A\",\n                \"email\": \"usera@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"USD\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Response for invalid receiver id with transaction data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "receiver_id",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "25",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.cconversion.com/api/convert",
+									"host": [
+										"local",
+										"cconversion",
+										"com"
+									],
+									"path": [
+										"api",
+										"convert"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 20:31:47 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 403,\n    \"message\": \"Invalid receiver ID.\",\n    \"data\": {\n        \"transactions\": [\n            {\n                \"id\": 1,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 4,\n                \"rate\": 0.85,\n                \"converted_amount\": 3.41,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:46:57.000000Z\",\n                \"updated_at\": \"2021-08-26T04:46:57.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 6,\n                \"rate\": 0.85,\n                \"converted_amount\": 5.11,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:14.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:14.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 10,\n                \"rate\": 0.85,\n                \"converted_amount\": 8.52,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:47.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:47.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 15,\n                \"rate\": 0.85,\n                \"converted_amount\": 12.78,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:57.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:57.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 25,\n                \"rate\": 0.85,\n                \"converted_amount\": 21.29,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:48:43.000000Z\",\n                \"updated_at\": \"2021-08-26T04:48:43.000000Z\"\n            }\n        ],\n        \"users\": [\n            {\n                \"id\": 2,\n                \"name\": \"User B\",\n                \"email\": \"userb@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"EUR\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Response for checking balance availability with transaction data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "receiver_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "250000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.cconversion.com/api/convert",
+									"host": [
+										"local",
+										"cconversion",
+										"com"
+									],
+									"path": [
+										"api",
+										"convert"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 20:32:33 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 403,\n    \"message\": \"You have no enough balance to transfer. Please, credit your balance.\",\n    \"data\": {\n        \"transactions\": [\n            {\n                \"id\": 1,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 4,\n                \"rate\": 0.85,\n                \"converted_amount\": 3.41,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:46:57.000000Z\",\n                \"updated_at\": \"2021-08-26T04:46:57.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 6,\n                \"rate\": 0.85,\n                \"converted_amount\": 5.11,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:14.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:14.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 10,\n                \"rate\": 0.85,\n                \"converted_amount\": 8.52,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:47.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:47.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 15,\n                \"rate\": 0.85,\n                \"converted_amount\": 12.78,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:57.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:57.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 25,\n                \"rate\": 0.85,\n                \"converted_amount\": 21.29,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:48:43.000000Z\",\n                \"updated_at\": \"2021-08-26T04:48:43.000000Z\"\n            }\n        ],\n        \"users\": [\n            {\n                \"id\": 2,\n                \"name\": \"User B\",\n                \"email\": \"userb@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"EUR\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Response for invalid app id for open exchange rate with transaction data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "receiver_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "27",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.cconversion.com/api/convert",
+									"host": [
+										"local",
+										"cconversion",
+										"com"
+									],
+									"path": [
+										"api",
+										"convert"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 20:33:56 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 403,\n    \"message\": \"Invalid App ID provided. Please sign up at https://openexchangerates.org/signup, or contact support@openexchangerates.org.\",\n    \"data\": {\n        \"transactions\": [\n            {\n                \"id\": 1,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 4,\n                \"rate\": 0.85,\n                \"converted_amount\": 3.41,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:46:57.000000Z\",\n                \"updated_at\": \"2021-08-26T04:46:57.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 6,\n                \"rate\": 0.85,\n                \"converted_amount\": 5.11,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:14.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:14.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 10,\n                \"rate\": 0.85,\n                \"converted_amount\": 8.52,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:47.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:47.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 15,\n                \"rate\": 0.85,\n                \"converted_amount\": 12.78,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:57.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:57.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 25,\n                \"rate\": 0.85,\n                \"converted_amount\": 21.29,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:48:43.000000Z\",\n                \"updated_at\": \"2021-08-26T04:48:43.000000Z\"\n            }\n        ],\n        \"users\": [\n            {\n                \"id\": 2,\n                \"name\": \"User B\",\n                \"email\": \"userb@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"EUR\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"name": "report",
+			"item": [
 				{
 					"name": "report",
-					"item": [
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "local.cconversion.com/api/report",
+							"host": [
+								"local",
+								"cconversion",
+								"com"
+							],
+							"path": [
+								"api",
+								"report"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "report",
-							"request": {
+							"name": "reports data",
+							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
@@ -986,89 +1369,79 @@
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "reports data",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"url": {
-											"raw": "local.cconversion.com/api/report",
-											"host": [
-												"local",
-												"cconversion",
-												"com"
-											],
-											"path": [
-												"api",
-												"report"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.18.0 (Ubuntu)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 26 Aug 2021 01:44:11 GMT"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Most attractive data.\",\n    \"data\": {\n        \"most_conversion\": {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"balance\": 4959,\n            \"total_conversion\": 80,\n            \"created_at\": null,\n            \"updated_at\": \"2021-08-25T17:45:48.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"User A\",\n                \"email\": \"zrshishir@gmail.com\",\n                \"email_verified_at\": \"2021-08-25T14:00:59.000000Z\",\n                \"currency\": \"USD\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        },\n        \"total_conv_for_particular_receiver\": {\n            \"sender\": {\n                \"id\": 1,\n                \"name\": \"User A\",\n                \"email\": \"zrshishir@gmail.com\",\n                \"email_verified_at\": \"2021-08-25T14:00:59.000000Z\",\n                \"currency\": \"USD\",\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            \"receiver\": {\n                \"id\": 2,\n                \"name\": \"User B\",\n                \"email\": \"ziaur.rahman@devnetlimited.com\",\n                \"email_verified_at\": \"2021-08-25T14:00:59.000000Z\",\n                \"currency\": \"EUR\",\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            \"total_transactions\": 8,\n            \"amount\": 68.15999999999998\n        }\n    }\n}"
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 04:48:55 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
 								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Most attractive data.\",\n    \"data\": {\n        \"most_conversion\": {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"balance\": 4940,\n            \"total_conversion\": 60,\n            \"created_at\": null,\n            \"updated_at\": \"2021-08-26T04:48:43.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"User A\",\n                \"email\": \"usera@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"USD\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        },\n        \"total_conv_for_particular_receiver\": {\n            \"sender\": {\n                \"id\": 1,\n                \"name\": \"User A\",\n                \"email\": \"usera@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"USD\",\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            \"receiver\": {\n                \"id\": 2,\n                \"name\": \"User B\",\n                \"email\": \"userb@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"EUR\",\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            \"total_transactions\": 5,\n            \"amount\": 51.11\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Third highest amount transaction for a particular user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "local.cconversion.com/api/third-highest/2",
+							"host": [
+								"local",
+								"cconversion",
+								"com"
+							],
+							"path": [
+								"api",
+								"third-highest",
+								"2"
 							]
-						},
+						}
+					},
+					"response": [
 						{
 							"name": "Third highest amount transaction for a particular user",
-							"request": {
+							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "local.cconversion.com/api/third-highest/1",
+									"raw": "local.cconversion.com/api/third-highest/2",
 									"host": [
 										"local",
 										"cconversion",
@@ -1077,75 +1450,213 @@
 									"path": [
 										"api",
 										"third-highest",
-										"1"
+										"2"
 									]
 								}
 							},
-							"response": [
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"name": "Third highest amount transaction for a particular user",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "local.cconversion.com/api/third-highest/1",
-											"host": [
-												"local",
-												"cconversion",
-												"com"
-											],
-											"path": [
-												"api",
-												"third-highest",
-												"1"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx/1.18.0 (Ubuntu)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, private"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 26 Aug 2021 02:06:01 GMT"
-										},
-										{
-											"key": "X-RateLimit-Limit",
-											"value": "60"
-										},
-										{
-											"key": "X-RateLimit-Remaining",
-											"value": "59"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Third highest conversion amount for a particular receiver.\",\n    \"data\": {\n        \"third_highest_amount_for_receiver\": [\n            {\n                \"id\": 12,\n                \"sender\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"ziaur.rahman@devnetlimited.com\",\n                    \"email_verified_at\": \"2021-08-25T14:00:59.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 9,\n                \"rate\": 0.85,\n                \"converted_amount\": 10.58,\n                \"receiver\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"zrshishir@gmail.com\",\n                    \"email_verified_at\": \"2021-08-25T14:00:59.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-25T17:45:48.000000Z\",\n                \"updated_at\": \"2021-08-25T17:45:48.000000Z\"\n            }\n        ]\n    }\n}"
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 17:27:38 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Third highest conversion amount for a particular receiver.\",\n    \"data\": {\n        \"third_highest_amount_for_receiver\": {\n            \"id\": 3,\n            \"sender\": {\n                \"id\": 1,\n                \"name\": \"User A\",\n                \"email\": \"usera@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"USD\",\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            \"amount\": 10,\n            \"rate\": 0.85,\n            \"converted_amount\": 8.52,\n            \"receiver\": {\n                \"id\": 2,\n                \"name\": \"User B\",\n                \"email\": \"userb@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"EUR\",\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            \"created_at\": \"2021-08-26T04:47:47.000000Z\",\n            \"updated_at\": \"2021-08-26T04:47:47.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "transaction index",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTM5NTllODAwOWI1YWM0NzI5NmI1YTJhOTgzZjM4OTdiZTVjOGI1MTY3MjAwNTI1N2VmOGM4MGYwMGExOWM0ODkxZDU3OWFiYzZmMzcxNmUiLCJpYXQiOjE2MzAwMDg5NDcuMzU5MTM4LCJuYmYiOjE2MzAwMDg5NDcuMzU5MTQyLCJleHAiOjE2NjE1NDQ5NDcuMzU2ODQ4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.SHXm9MOx2pdvV-52LBoI_0GpbvZAi49Ri-AvYk8VfcOwafL9NBdo3t2b-3b4PMFEQeKTKmTLSA-jHM4j3h74dB-aKVOJhY4plir7Fh6LNHvq7vLA-CdB442wIUj6qRiT-op6Yx07Dqm7Ahe2ZcebOgw-ySDkso8J6wiJuDql89IerHiQet2QL6wS2MTGqwJ8nzkfpbQG1iMHV7FMzntygGdACNs6e23duDQMuMq66AmHeVnGc08-ZjMsB_xZMQ006q1Jsxz8YxeLB7kVmnzXRYf9rG8PkJsfWU_AwnxxwbULzz3SUHDcMDuWCZw_VT60dNV_Fm1LDyJolVsLgDo-GYVdBLG5sk8FmowyIQw0wyNCNKuE9zO2xEoIVbWRMJKox9S7PbyJ_L_6kHUJW0xQ5cojOvBI5uTw4o06UlUAJSsNIn_mHghp_ywfj4_F9pi58LB7fHzQN3iTXO-l-AEV8Wv6l_PMVF5c9Bc45uxlvvogYk_ED3Hy3R8iJQKEqUw7W3HQe5IHSRRcxLCBB-6y7-1mspASu2WfM4BPXZ0bjHuNgA9lNr2BpvdGp6XimQsl7I8FfvzJrcYoJxsbAZ__pXBgtOqowBFRcgnH9Z6f5TkieCvclu7l4t5mfgHLYriAlu5W6hs6qMkhhzfxjDKTtGwi0kX8wu8L_Ecov83SGfE",
+									"type": "string"
 								}
 							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "local.cconversion.com/api/transactions",
+							"host": [
+								"local",
+								"cconversion",
+								"com"
+							],
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "transaction index with data response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "local.cconversion.com/api/transactions",
+									"host": [
+										"local",
+										"cconversion",
+										"com"
+									],
+									"path": [
+										"api",
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 20:14:19 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Transaction histories.\",\n    \"data\": {\n        \"transactions\": [\n            {\n                \"id\": 1,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 4,\n                \"rate\": 0.85,\n                \"converted_amount\": 3.41,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:46:57.000000Z\",\n                \"updated_at\": \"2021-08-26T04:46:57.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 6,\n                \"rate\": 0.85,\n                \"converted_amount\": 5.11,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:14.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:14.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 10,\n                \"rate\": 0.85,\n                \"converted_amount\": 8.52,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:47.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:47.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 15,\n                \"rate\": 0.85,\n                \"converted_amount\": 12.78,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:47:57.000000Z\",\n                \"updated_at\": \"2021-08-26T04:47:57.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"sender\": {\n                    \"id\": 1,\n                    \"name\": \"User A\",\n                    \"email\": \"usera@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"USD\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"amount\": 25,\n                \"rate\": 0.85,\n                \"converted_amount\": 21.29,\n                \"receiver\": {\n                    \"id\": 2,\n                    \"name\": \"User B\",\n                    \"email\": \"userb@gmail.com\",\n                    \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                    \"currency\": \"EUR\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                \"created_at\": \"2021-08-26T04:48:43.000000Z\",\n                \"updated_at\": \"2021-08-26T04:48:43.000000Z\"\n            }\n        ],\n        \"users\": [\n            {\n                \"id\": 2,\n                \"name\": \"User B\",\n                \"email\": \"userb@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"EUR\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "transaction index without data response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "local.cconversion.com/api/transactions",
+									"host": [
+										"local",
+										"cconversion",
+										"com"
+									],
+									"path": [
+										"api",
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 26 Aug 2021 20:16:07 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Transaction histories.\",\n    \"data\": {\n        \"transactions\": [],\n        \"users\": [\n            {\n                \"id\": 1,\n                \"name\": \"User A\",\n                \"email\": \"usera@gmail.com\",\n                \"email_verified_at\": \"2021-08-26T04:37:21.000000Z\",\n                \"currency\": \"USD\",\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				}

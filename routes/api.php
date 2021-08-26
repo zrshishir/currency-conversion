@@ -24,6 +24,7 @@ Route::group([], function(){
     Route::get('report', 'App\Http\Controllers\ReportController@report');
     Route::get('third-highest/{id}', 'App\Http\Controllers\ReportController@thirdHighest');
     Route::group(['middleware'=>'auth:api'], function(){
+        Route::get('transactions', 'App\Http\Controllers\TransactionController@index');
         Route::post('convert', 'App\Http\Controllers\CurrencyConversionController@convertCurrency');//convert
         Route::get('logout', 'App\Http\Controllers\LogoutController@logout');//logout
     });

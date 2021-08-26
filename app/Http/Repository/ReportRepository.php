@@ -30,7 +30,7 @@ class ReportRepository
             ->orderBy('converted_amount','DESC')
             ->offset(2)
             ->limit(1)
-            ->get();
+            ->first();
         return ['third_highest_amount_for_receiver' => $thirdHighest];
     }
 }
